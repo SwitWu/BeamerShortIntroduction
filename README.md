@@ -1,1 +1,2 @@
 # BeamerShortIntroduction
+这是一份关于Beamer文档类的简单介绍，想详细了解Beamer文档类请查阅Till的著作Beameruserguide
