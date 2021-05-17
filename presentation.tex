@@ -13,6 +13,7 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{enumerate}
+\usepackage{siunitx}
 \usepackage{hyperref}
 \hypersetup{colorlinks,%
             linkcolor=blue,%
@@ -383,7 +384,7 @@ never a color. It also produces alerted texts in boldface fonts.
 \begin{frame}[containsverbatim]
 \frametitle{帧的定制}
 \framesubtitle{帧尺寸}
-帧的默认尺寸为128mm$\times$96mm，其长宽比为$4:3$。默认尺寸可以通过 \verb|aspectratio| 选项由下述方式修改： \verb|\documentclass[aspectratio=aval]{beamer}|，其中 \verb|aval| 是长宽比的选择值。详细数据见下表。
+帧的默认尺寸为 \SI{128}{\milli\metre}$\times$\SI{96}{\milli\metre}，其长宽比为$4:3$。默认尺寸可以通过 \verb|aspectratio| 选项由下述方式修改： \verb|\documentclass[aspectratio=aval]{beamer}|，其中 \verb|aval| 是长宽比的选择值。详细数据见下表。
 \end{frame}
 \begin{frame}
 \begin{table}
@@ -391,19 +392,19 @@ never a color. It also produces alerted texts in boldface fonts.
 \toprule
 选择值 & 长宽比 & 帧尺寸\\
 \midrule
-1610 &16:10 &160mm$\times$100mm\\
+1610   & 16:10  & \SI{160}{\milli\metre}$\times$\SI{100}{\milli\metre}\\
 \midrule
-169 &16:9 &160mm$\times$90mm\\
+169    & 16:9   & \SI{160}{\milli\metre}$\times$\SI{90}{\milli\metre}\\
 \midrule
-149 &14:9 &140mm$\times$90mm\\
+149    & 14:9   & 140mm$\times$90mm\\
 \midrule
-141 &1.41:1& 148.5mm$\times$105mm\\
+141    & 1.41:1 & 148.5mm$\times$105mm\\
 \midrule
-54 &5:4& 125mm$\times$100mm\\
+54     & 5:4    & 125mm$\times$100mm\\
 \midrule
-43 &4:3& 128mm$\times$96mm(default)\\
+43     & 4:3    & 128mm$\times$96mm(default)\\
 \midrule
-32 &3:2 &135mm$\times$90mm\\
+32     & 3:2    &135mm$\times$90mm\\
 \bottomrule
 \end{tabular}
 \caption{帧尺寸选择值表}
@@ -428,7 +429,7 @@ The \verb|allowframebreaks| option may be used in the frame (i.e., as \verb|\fra
 \section{Mathematics In Beamer}
 \begin{frame}[allowframebreaks]
 \frametitle{Mathematics In Beamer}
-在Beamer文档类中排印数学公式并无什么特别之处。
+在 Beamer 文档类中排印数学公式并无什么特别之处。
 \begin{theorem}[Wallice公式]
 Consider the integral $\displaystyle I_n=\int_0^{\frac{\pi}{2}}\sin^nx\;\mathrm{d}x$, we can obtain the Wallice formula:
 \[\prod_{n=1}^{\infty}\left(1-\frac{1}{(2n)^2}\right)=\frac{2}{\pi}\]
