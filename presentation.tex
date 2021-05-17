@@ -3,8 +3,8 @@
 \usetheme{CambridgeUS}
 %\usefonttheme[stillsansseriftext,stillsansserifsmall,stillsansseriflarge]{serif}
 \usefonttheme[onlymath]{serif}
-\usepackage[fontset=fandol]{ctex}
-\setCJKsansfont{FandolSong}
+\usepackage{ctex}
+\setCJKsansfont{SimHei}
 %\usepackage{fancyvrb}
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm}
@@ -23,6 +23,7 @@
 \newcommand\m[1]{\mbox{$\langle${\rmfamily\textit{#1}\/}$\rangle$}}
 \newcommand{\marg}[1]{{\tt\string{}\m{#1}{\tt\string}}}
 \newcommand{\oarg}[1]{{\tt[}\m{#1}{\tt]}}
+\newcommand{\pkg}[1]{\textsf{#1}}
 %\logo{This is a logo}
 
 %\setbeamercovered{transparent}
@@ -48,7 +49,7 @@ Wuhan University\\WuHan}
 \section{概述}
 \begin{frame}
 \frametitle{概述}
-Beamer文档类是专用于制作演示文稿的\LaTeX{} 文档类，本文只是对此文档类的一些粗略介绍，如果需要全面深入地了解Beamer文档类请查阅Till教授所著的Beameruserguide，此文档可在ctan官网获取 \url{http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf} 或者直接通过命令行工具texdoc获取。
+Beamer 文档类是专用于制作演示文稿的 \LaTeX{} 文档类，本文只是对此文档类的一些粗略介绍，如果需要全面深入地了解 Beamer 文档类请查阅 Till 教授所著的 Beameruserguide，此文档可在 ctan 官网获取 \url{http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf} 或者直接通过命令行工具 texdoc 获取。
 \end{frame}
 
 \section{帧(Frame)}
@@ -56,7 +57,7 @@ Beamer文档类是专用于制作演示文稿的\LaTeX{} 文档类，本文只�
 \begin{frame}[containsverbatim]
 \frametitle{帧}
 %In the document-class beamer, a presentation consists of a number of frames. A frame is created by two means:
-在Beamer文档类中，一个演示文档由一系列帧组成，每一帧由一系列幻灯片(slide)组成。每一帧通过两种方式创建：
+在 Beamer 文档类中，一个演示文档由一系列帧组成，每一帧由一系列幻灯片(slide)组成。每一帧通过两种方式创建：
 %\begin{itemize}
 %\item Command:\verb|\frame[][]{}|
 %\item %Environment:\verb|\begin{frame}[][]...\end{frame}|
@@ -476,5 +477,18 @@ Consider the integral $\displaystyle I_n=\int_0^{\frac{\pi}{2}}\sin^nx\;\mathrm{
       (c) node[anchor=south west] {$c$};
 \end{tikzpicture}
 \end{verbatim}
+\end{frame}
+
+\section{在 Beamer 中设置字体}
+\subsection{设置中文字体}
+\begin{frame}[containsverbatim]
+\frametitle{设置中文字体}
+中文的字体设置采用 \pkg{xeCJK} 宏包的标准方法：
+\begin{block}{命令}
+	\verb|\setCJKmainfont|\marg{main-font}
+	\verb|\setCJKsansfont|\marg{sans-font}
+	\verb|\setCJKmonofont|\marg{mono-font}
+\end{block}
+但是注意 Beamer 默认使用的无衬线字体族，因此在默认情况下，只有使用上述第二个命令才有效果，例如，通过命令 \verb|\setCJKsansfont{SimHei}| 设置字体为中易黑体。
 \end{frame}
 \end{document}
